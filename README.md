@@ -1,6 +1,9 @@
 # UI Components Stack
 
-Welcome to the **UI Components Stack** repository! 🎨 This project showcases a collection of reusable UI components such as buttons, cards, dropdowns, and more, created using **HTML**, **CSS**, and **JavaScript**. Our goal is to provide a set of beautifully designed and easily customizable UI elements for modern web development. It is a Open Source repository for developers where they can contribute and access the UI components.
+Welcome to the **UI Components Stack** repository! 🎨 This project showcases a collection of reusable UI components such as buttons, cards, dropdowns, and more, created using **HTML**, **CSS**, and **JavaScript**. Our goal is to provide a set of beautifully designed and easily customizable UI elements for modern web development. It is a Open Source repository for developers where they can contribute and access the UI components and make the development process easy.
+
+## 🛠️  Regarding Merging the Pull request...
+Each and every Contributor who is contributing to this repository is welcomed and please don't panic each and every Pull request will be reviewed and merged if it is a valid contribution.
 
 ## 🚀 Features
 - **Responsive UI components**: Cards, buttons, dropdowns, and more!
