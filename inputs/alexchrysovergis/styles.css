@@ -1,0 +1,80 @@
+/* Start of variables */
+:root {
+  /* colors */
+  --switch-bg-1: #b0aeff;
+  --switch-bg-2: #321549;
+  --circle-bg-1: black;
+  --circle-bg-2: white;
+  /* sizes */
+  --switch-width: 60px;
+  --switch-height: 34px;
+  --circle-width: 26px;
+  --circle-height: 26px;
+  /* radiuses */
+  --standard-radius: 34px;
+  --circle-radius: 50%;
+  /* box shadows */
+  --switch-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  /* transitions */
+  --slider-transition: background-color 0.4s ease-in-out;
+  --circle-transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+/* End of variables */
+
+/* Start of styles to center the component */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* End of styles to center the component */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  box-shadow: var(--switch-box-shadow);
+  border-radius: var(--standard-radius);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--switch-bg-1);
+  transition: var(--slider-transition);
+  border-radius: var(--standard-radius);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  width: var(--circle-width);
+  height: var(--circle-height);
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--circle-bg-1);
+  transition: var(--circle-transition);
+  border-radius: var(--circle-radius);
+}
+
+input:checked + .slider {
+  background-color: var(--switch-bg-2);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: var(--circle-bg-2);
+}
