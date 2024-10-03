@@ -1,0 +1,79 @@
+:root {
+    --color: #242424;
+    --background-color: beige;
+    --color-dark: beige;
+    --background-color-dark: #242424;
+}
+
+* {
+    line-height: calc(1em + 0.5rem);
+}
+
+body {
+    color: var(--color-dark);
+    background-color: var(--background-color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.cordial {
+    position: relative;
+    color: var(--color-dark);
+    background-color: var(--background-color-dark);
+    font-size: 1.5rem;
+    padding: 1em 2em;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: color 0.4s ease, background-color 0.9s ease, border-radius 0.4s ease;
+}
+
+.cordial::before, .cordial::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0.25rem;
+    background-color: var(--color-dark);
+    top: 0;
+    transition: height 0.4s ease, width 0.4s ease;
+}
+
+.cordial::before {
+    left: 0;
+}
+
+.cordial::after {
+    right: 0;
+}
+
+.cordial:hover span {
+    z-index: 1;
+}
+
+.cordial span {
+    position: relative;
+}
+
+.cordial span::before, .cordial span::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0.25rem;
+    background-color: var(--color-dark);
+    transition: width 0.45s ease;
+}
+
+.cordial:hover::before, .cordial:hover::after {
+    width: 100%;
+}
+
+.cordial:hover {
+    border-radius: 0.75rem;
+    background-color: var(--background-color-dark);
+    color: #000000;
+}
