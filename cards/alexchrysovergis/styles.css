@@ -1,3 +1,45 @@
+/* Start of variables */
+:root {
+  /* colors */
+  --flip-card-front-bg: #b0aeff;
+  --flip-card-back-bg: #321549;
+  --text-front-color: black;
+  --text-back-color: white;
+  /* flexbox and text alignment */
+  --flip-card-front-back-flex-direction: column;
+  --flip-card-front-back-justify-content: center;
+  --flip-card-front-back-align-items: center;
+  --flip-card-front-back-text-align: center;
+  /* sizes */
+  --flip-card-width: 400px;
+  --flip-card-height: 300px;
+  --flip-card-inner-width: 100%;
+  --flip-card-inner-height: 100%;
+  --flip-card-front-back-width: 100%;
+  --flip-card-front-back-height: 100%;
+  /* font styles */
+  --flip-card-inner-font: Arial, sans-serif;
+  --heading-size: 24px;
+  --content-size: 16px;
+  /* spacing */
+  --heading-margin: 0 0 1rem 0;
+  --content-margin: 0;
+  --flip-card-front-back-padding: 3rem;
+  /* radiuses */
+  --flip-card-radius: 40px;
+  /* box shadows */
+  --flip-card-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* transitions */
+  --flip-card-inner-transition: transform 0.6s ease-in-out;
+  /* transform styles */
+  --flip-card-inner-rotate: rotateY(180deg);
+  --flip-card-inner-transform-style: preserve-3d;
+  --flip-card-back-rotate: rotateY(180deg);
+  /* perspective */
+  --flip-card-perspective: 1000px;
+}
+/* End of variables */
+
 /* Start of styles to center the component */
 body {
   margin: 0;
@@ -9,57 +51,57 @@ body {
 /* End of styles to center the component */
 
 .flip-card {
-  width: 400px;
-  height: 300px;
-  perspective: 1000px;
+  width: var(--flip-card-width);
+  height: var(--flip-card-height);
+  perspective: var(--flip-card-perspective);
 }
 
 .flip-card-inner {
   position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s ease-in-out;
-  transform-style: preserve-3d;
+  width: var(--flip-card-inner-width);
+  height: var(--flip-card-inner-height);
+  transition: var(--flip-card-inner-transition);
+  transform-style: var(--flip-card-inner-transform-style);
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+  transform: var(--flip-card-inner-rotate);
 }
 
 .flip-card-inner h2 {
-  font-size: 24px;
-  margin: 0 0 1rem 0;
+  font-size: var(--heading-size);
+  margin: var(--heading-margin);
 }
 
 .flip-card-inner p {
-  font-size: 16px;
-  margin: 0;
+  font-size: var(--content-size);
+  margin: var(--content-margin);
 }
 
 .flip-card-front, .flip-card-back {
-  font-family: Arial, sans-serif;
+  font-family: var(--flip-card-inner-font);
   position: absolute;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 100%;
+  flex-direction: var(--flip-card-front-back-flex-direction);
+  justify-content: var(--flip-card-front-back-justify-content);
+  align-items: var(--flip-card-front-back-align-items);
+  text-align: var(--flip-card-front-back-text-align);
+  width: var(--flip-card-front-back-width);
+  height: var(--flip-card-front-back-height);
   box-sizing: border-box;
-  padding: 3rem;
+  padding: var(--flip-card-front-back-padding);
   backface-visibility: hidden;
-  border-radius: 40px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: var(--flip-card-radius);
+  box-shadow: var(--flip-card-box-shadow);
 }
 
 .flip-card-front {
-  background-color: #b0aeff;
-  color: black;
+  background-color: var(--flip-card-front-bg);
+  color: var(--text-front-color);
 }
 
 .flip-card-back {
-  background-color: #321549;
-  color: white;
-  transform: rotateY(180deg);
+  background-color: var(--flip-card-back-bg);
+  color: var(--text-back-color);
+  transform: var(--flip-card-back-rotate);
 }
