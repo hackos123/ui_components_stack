@@ -1,0 +1,144 @@
+/* Start of variables */
+:root {
+  /* colors */
+  --drop-btn-bg: #b0aeff;
+  --drop-btn-hover-bg: #321549;
+  --drop-btn-after-bg: rgba(255, 255, 255, 0.35);
+  --text-color: black;
+  --text-hover-color: white;
+  /* border */
+  --drop-btn-border: none;
+  /* font styles */
+  --drop-btn-font: Arial, sans-serif;
+  --drop-btn-font-size: 16px;
+  --dropdown-content-font: Arial, sans-serif;
+  --dropdown-content-font-size: 14px;
+  /* spacing */
+  --drop-btn-padding: 0.75rem 2rem;
+  /* radiuses */
+  --drop-btn-radius: 40px;
+  /* box shadows */
+  --drop-btn-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  /* transitions */
+  --drop-btn-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  --drop-btn-after-transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  --dropdown-content-transition: opacity 0.5s ease, height 0.5s ease;
+}
+/* End of variables */
+
+/* Start of styles to center the component */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* End of styles to center the component */
+
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-content {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  top: 100%;
+  z-index: 1;
+  transition: var(--dropdown-content-transition);
+  font-family: var(--dropdown-content-font);
+  font-size: var(--dropdown-content-font-size);
+  text-align: center;
+  pointer-events: none;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  height: auto;
+  pointer-events: auto;
+}
+
+.drop-btn {
+  position: relative;
+  overflow: hidden;
+  font-family: var(--drop-btn-font);
+  font-size: var(--drop-btn-font-size);
+  background-color: var(--drop-btn-bg);
+  color: var(--text-color);
+  border: var(--drop-btn-border);
+  border-radius: var(--drop-btn-radius);
+  padding: var(--drop-btn-padding);
+  box-shadow: var(--drop-btn-box-shadow);
+  transition: var(--drop-btn-transition);
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+}
+
+.drop-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--drop-btn-after-bg);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: var(--drop-btn-after-transition);
+}
+
+.drop-btn:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+}
+
+.dropdown:hover .drop-btn {
+  background-color: var(--drop-btn-hover-bg);
+  color: var(--text-hover-color);
+}
+
+.dropdown-content a {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  background-color: var(--drop-btn-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  padding: var(--drop-btn-padding);
+  border-radius: var(--drop-btn-radius);
+  margin-bottom: 0.25rem;
+  transition: var(--drop-btn-transition);
+}
+
+.dropdown-content a:hover {
+  background-color: var(--drop-btn-hover-bg);
+  color: var(--text-hover-color);
+}
+
+.dropdown-content a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--drop-btn-after-bg);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: var(--drop-btn-after-transition);
+}
+
+.dropdown-content a:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+}
