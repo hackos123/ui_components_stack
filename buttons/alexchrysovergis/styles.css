@@ -1,0 +1,74 @@
+/* Start of variables */
+:root {
+  /* colors */
+  --button-bg: #b0aeff;
+  --button-hover-bg: #321549;
+  --button-after-bg: rgba(255, 255, 255, 0.35);
+  --text-color: black;
+  --text-hover-color: white;
+  /* border */
+  --button-border: none;
+  /* font styles */
+  --button-font: Arial, sans-serif;
+  --button-font-size: 16px;
+  /* spacing */
+  --button-padding: 0.75rem 2rem;
+  /* radiuses */
+  --button-radius: 40px;
+  /* box shadows */
+  --button-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  /* transitions */
+  --button-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  --button-after-transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+}
+/* End of variables */
+
+/* Start of styles to center the component */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* End of styles to center the component */
+
+.button {
+  position: relative;
+  overflow: hidden;
+  font-family: var(--button-font);
+  font-size: var(--button-font-size);
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: var(--button-border);
+  border-radius: var(--button-radius);
+  padding: var(--button-padding);
+  box-shadow: var(--button-box-shadow);
+  transition: var(--button-transition);
+  cursor: pointer;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--button-after-bg);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: var(--button-after-transition);
+  opacity: 0;
+}
+
+.button:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+}
+
+.button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--text-hover-color);
+}
